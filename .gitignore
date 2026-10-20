@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.qa-*/
+qa-*.png
+qa-artifacts/
+*.log
