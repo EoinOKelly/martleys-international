@@ -1,6 +1,6 @@
-# Martley International
+# Martleys Transport
 
-React and Vite transport website for Martley International / Portlaoise Logistics.
+React and Vite transport website for Martleys Transport / Portlaoise Logistics.
 
 ## Development
 
@@ -34,6 +34,6 @@ This checks every route from 320 through 1440 CSS pixels in local Edge Chromium,
 
 - Site copy is adapted from `Portlaoise Logistics Website Content Draft.docx` supplied for this project. Its draft placeholders for fleet counts, testimonials and environmental figures have been omitted.
 - Freight and team photography was supplied within that draft document.
-- `public/assets/hero.mp4` is a compressed excerpt of the supplied `Martleys Website Home Page Video.mp4`. It shows the coach business and is a temporary hero until a freight-specific video is available.
+- `public/assets/hero-drone.mp4` is a 28-second, 720p, muted H.264 encode of the supplied `Martleys International_Video 2026 HP.mp4` drone footage. The 160 MB source is represented by a roughly 5 MB web video and a WebP poster. Playback waits until the hero enters view and is skipped for reduced motion or data saving.
 - Fonts are bundled locally through Fontsource.
 - The contact form composes a `mailto:` message in the visitor's email app; it does not submit to a backend.

@@ -4,7 +4,7 @@ import { Link, NavLink, useLocation } from 'react-router';
 export const A = ({ children }) => <span aria-hidden="true">{children || '↗'}</span>;
 
 export function Brand() {
-  return <Link className="brand" to="/" aria-label="Martley International, back to home"><span className="brand-main">MARTLEY<span className="brand-slash">/</span></span><span className="brand-sub">INTERNATIONAL TRANSPORT</span></Link>;
+  return <Link className="brand" to="/" aria-label="Martleys Transport, back to home"><span className="brand-main">MARTLEYS</span><span className="brand-sub">TRANSPORT · PORTLAOISE</span></Link>;
 }
 
 const navItems = [
@@ -49,7 +49,7 @@ export function Header() {
 
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
-    <div className="topline"><div className="container topline-inner"><span>Family run. Irish owned. Internationally driven.</span><div><a href="tel:+353578620888">+353 (0)57 862 0888</a><span className="topline-divider">/</span><a href="mailto:info@portlaoiselogistics.com">info@portlaoiselogistics.com</a></div></div></div>
+    <div className="topline"><div className="container topline-inner"><span>Transport from Portlaoise across Ireland, the UK and Europe</span><div><a href="tel:+353578620888">+353 (0)57 862 0888</a><span className="topline-divider">/</span><a href="mailto:info@portlaoiselogistics.com">info@portlaoiselogistics.com</a></div></div></div>
     <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
       <div className="container header-inner">
         <Brand />
@@ -64,7 +64,7 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer className="footer"><div className="container footer-top"><Brand /><p>Driven by experience.<br/>Powered by people.</p><div className="footer-links"><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/sectors">Sectors</Link><Link to="/fleet">Fleet</Link><Link to="/standards">Standards</Link><Link to="/careers">Careers</Link><Link to="/contact">Contact</Link></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Martley International / Portlaoise Logistics.</span><span>Portlaoise, Ireland <b>↗</b> Everywhere you need us.</span></div></footer>;
+  return <footer className="footer"><div className="container footer-top"><Brand /><p>Temperature-controlled transport,<br/>bulk haulage and vehicle recovery.</p><div className="footer-links"><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/sectors">Sectors</Link><Link to="/fleet">Fleet</Link><Link to="/standards">Standards</Link><Link to="/careers">Careers</Link><Link to="/contact">Contact</Link></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Martleys Transport / Portlaoise Logistics.</span><span>Portlaoise, Co. Laois, Ireland</span></div></footer>;
 }
 
 export function Kicker({ children, dark = false }) {
@@ -95,7 +95,7 @@ export function ContactCta({ children, body = 'Tell us what you need to move. We
 
 export function usePage(title, description) {
   useEffect(() => {
-    document.title = `${title} | Martley International`;
+    document.title = `${title} | Martleys Transport`;
     document.querySelector('meta[name="description"]')?.setAttribute('content', description);
   }, [title, description]);
 }
@@ -106,13 +106,22 @@ export function useHeroVideo() {
     const video = ref.current;
     if (!video) return;
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (motion || navigator.connection?.saveData) { video.pause(); return; }
+    const connection = navigator.connection;
+    if (motion || connection?.saveData || /(^|-)2g|3g/.test(connection?.effectiveType || '')) { video.pause(); return; }
+    let idleId, timerId;
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) video.play().catch(() => {});
-      else video.pause();
+      if (entry.isIntersecting) {
+        const start = () => video.play().catch(() => {});
+        if ('requestIdleCallback' in window) idleId = window.requestIdleCallback(start, { timeout: 1800 });
+        else timerId = window.setTimeout(start, 800);
+      } else {
+        if (idleId) window.cancelIdleCallback(idleId);
+        if (timerId) window.clearTimeout(timerId);
+        video.pause();
+      }
     }, { threshold: 0.05 });
     observer.observe(video);
-    return () => { observer.disconnect(); video.pause(); };
+    return () => { observer.disconnect(); if (idleId) window.cancelIdleCallback(idleId); if (timerId) window.clearTimeout(timerId); video.pause(); };
   }, []);
   return ref;
 }

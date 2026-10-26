@@ -8,6 +8,7 @@ import '@fontsource/barlow-condensed/latin-800.css';
 import '@fontsource-variable/dm-sans/wght.css';
 import './styles.css';
 import './pages.css';
+import './refresh.css';
 
 document.documentElement.classList.add('js');
 
