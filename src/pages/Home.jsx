@@ -13,7 +13,7 @@ export default function Home() {
   const videoRef = useHeroVideo();
   return <main id="main" className="adare-home">
     <section className="hero" aria-label="Martleys trucks on the road and at the depot">
-      <video ref={videoRef} className="hero-video" muted loop playsInline preload="none" poster="/assets/hero-drone.webp" aria-hidden="true"><source src="/assets/hero-drone.mp4" type="video/mp4"/></video>
+      <video ref={videoRef} className="hero-video" muted loop playsInline preload="none" poster="/assets/hero-drone.webp" aria-hidden="true"><source src="/assets/hero-drone-hq.mp4" type="video/mp4" media="(min-width: 768px)"/><source src="/assets/hero-drone.mp4" type="video/mp4"/></video>
       <div className="hero-shade"/>
       <a className="hero-discover" href="#welcome">PORTLAOISE, IRELAND <span aria-hidden="true">↓</span></a>
     </section>

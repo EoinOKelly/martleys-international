@@ -34,6 +34,6 @@ This checks every route from 320 through 1440 CSS pixels in local Edge Chromium,
 
 - Site copy is adapted from `Portlaoise Logistics Website Content Draft.docx` supplied for this project. Its draft placeholders for fleet counts, testimonials and environmental figures have been omitted.
 - Freight and team photography was supplied within that draft document.
-- `public/assets/hero-drone.mp4` is a 28-second, 720p, muted H.264 encode of the supplied `Martleys International_Video 2026 HP.mp4` drone footage. The 160 MB source is represented by a roughly 5 MB web video and a WebP poster. Playback waits until the hero enters view and is skipped for reduced motion or data saving.
+- The hero uses a 28-second excerpt of the supplied `Martleys International_Video 2026 HP.mp4` drone footage. Desktop gets a 1080p H.264 encode (`hero-drone-hq.mp4`, about 15 MB); narrower screens get a 720p, 30 fps encode (`hero-drone.mp4`, about 9 MB). Only the matching source is requested. A 274 KB WebP poster appears first. Playback waits until the hero enters view and is skipped for reduced motion or data saving.
 - Fonts are bundled locally through Fontsource.
 - The contact form composes a `mailto:` message in the visitor's email app; it does not submit to a backend.
