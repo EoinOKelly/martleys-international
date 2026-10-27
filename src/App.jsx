@@ -7,7 +7,6 @@ const About = lazy(() => import('./pages/About.jsx'));
 const Services = lazy(() => import('./pages/Services.jsx'));
 const Sectors = lazy(() => import('./pages/Sectors.jsx'));
 const Fleet = lazy(() => import('./pages/Fleet.jsx'));
-const Standards = lazy(() => import('./pages/Standards.jsx'));
 const Careers = lazy(() => import('./pages/Careers.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
@@ -76,6 +75,6 @@ function RouteEffects() {
 
 export default function App() {
   return <><RouteEffects/><Header/><Suspense fallback={<main className="route-loading" id="main" aria-live="polite">Loading page…</main>}><Routes>
-    <Route path="/" element={<Home/>}/><Route path="/about" element={<About/>}/><Route path="/services" element={<Services/>}/><Route path="/sectors" element={<Sectors/>}/><Route path="/fleet" element={<Fleet/>}/><Route path="/standards" element={<Standards/>}/><Route path="/careers" element={<Careers/>}/><Route path="/contact" element={<Contact/>}/><Route path="*" element={<NotFound/>}/>
+    <Route path="/" element={<Home/>}/><Route path="/about" element={<About/>}/><Route path="/services" element={<Services/>}/><Route path="/sectors" element={<Sectors/>}/><Route path="/fleet" element={<Fleet/>}/><Route path="/careers" element={<Careers/>}/><Route path="/contact" element={<Contact/>}/><Route path="*" element={<NotFound/>}/>
   </Routes></Suspense><Footer/></>;
 }

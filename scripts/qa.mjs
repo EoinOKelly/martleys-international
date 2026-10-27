@@ -3,7 +3,7 @@ import { mkdir } from 'node:fs/promises';
 import { chromium } from 'playwright-core';
 
 const baseUrl = process.env.SITE_URL || 'http://127.0.0.1:4173';
-const routes = ['/', '/about', '/services', '/sectors', '/fleet', '/standards', '/careers', '/contact', '/missing-page'];
+const routes = ['/', '/about', '/services', '/sectors', '/fleet', '/careers', '/contact', '/missing-page'];
 const widths = [320, 375, 390, 430, 768, 900, 1024, 1440];
 const browser = await chromium.launch({ channel: 'msedge', headless: true, args: ['--disable-gpu', '--disable-software-rasterizer', '--no-sandbox'] });
 const failures = [];
@@ -40,20 +40,20 @@ try {
       const menu = page.locator('.menu-button');
       await menu.click();
       assert.equal(await menu.getAttribute('aria-expanded'), 'true', `${width}px menu opens`);
-      await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: /Get a quote/i }).click();
+      await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: /Contact us/i }).click();
       await page.waitForURL('**/contact');
       await page.locator('h1').first().waitFor();
       assert.equal(await page.locator('h1').count(), 1, `${width}px contact route renders`);
       assert.equal(await page.getByRole('button', { name: 'Open menu' }).getAttribute('aria-expanded'), 'false', `${width}px menu closes after navigation`);
       assert.equal(await page.locator('#main-nav').evaluate(element => getComputedStyle(element).visibility), 'hidden', `${width}px closed menu is hidden`);
     } else {
-      await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: /Get a quote/i }).click();
+      await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: /Contact us/i }).click();
       await page.waitForURL('**/contact');
     }
     if (width === 390) {
       await page.locator('input[name="name"]').fill('Test User');
       await page.locator('input[name="email"]').fill('test@example.com');
-      await page.locator('select[name="service"]').selectOption('Bulk haulage');
+      await page.locator('select[name="service"]').selectOption('Bulk Haulage');
       await page.locator('textarea[name="details"]').fill('Test load details');
       await page.getByRole('button', { name: /Create email enquiry/i }).click();
       assert.match(await page.getByRole('status').textContent(), /Opening your email application/);

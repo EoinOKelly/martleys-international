@@ -4,12 +4,12 @@ import { Link, NavLink, useLocation } from 'react-router';
 export const A = ({ children }) => <span aria-hidden="true">{children || '↗'}</span>;
 
 export function Brand() {
-  return <Link className="brand" to="/" aria-label="Martleys Transport, back to home"><span className="brand-main">MARTLEYS</span><span className="brand-sub">TRANSPORT · PORTLAOISE</span></Link>;
+  return <Link className="brand" to="/" aria-label="Martley International, back to home"><span className="brand-main">MARTLEY</span><span className="brand-sub">INTERNATIONAL TRANSPORT</span></Link>;
 }
 
 const navItems = [
-  ['About', '/about'], ['Services', '/services'], ['Sectors', '/sectors'],
-  ['Fleet', '/fleet'], ['Careers', '/careers']
+  ['About', '/about'], ['Services', '/services'], ['Industries', '/sectors'],
+  ['Fleet', '/fleet'], ['Join our team', '/careers']
 ];
 
 export function Header() {
@@ -55,7 +55,7 @@ export function Header() {
         <Brand />
         <nav className={`main-nav${open ? ' is-open' : ''}`} id="main-nav" ref={navRef} aria-label="Main navigation">
           {navItems.map(([label, path]) => <NavLink key={path} to={path} onClick={() => setOpen(false)}>{label}</NavLink>)}
-          <NavLink className="nav-contact" to="/contact" onClick={() => setOpen(false)}>Get a quote <A /></NavLink>
+          <NavLink className="nav-contact" to="/contact" onClick={() => setOpen(false)}>Contact us <A /></NavLink>
         </nav>
         <button className="menu-button" ref={toggleRef} type="button" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="main-nav" onClick={() => setOpen(value => !value)}><span/><span/><span/></button>
       </div>
@@ -64,7 +64,7 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer className="footer"><div className="container footer-top"><Brand /><p>Temperature-controlled transport,<br/>bulk haulage and vehicle recovery.</p><div className="footer-links"><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/sectors">Sectors</Link><Link to="/fleet">Fleet</Link><Link to="/standards">Standards</Link><Link to="/careers">Careers</Link><Link to="/contact">Contact</Link></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Martleys Transport / Portlaoise Logistics.</span><span>Portlaoise, Co. Laois, Ireland</span></div></footer>;
+  return <footer className="footer"><div className="container footer-top"><Brand /><p>Temperature-controlled freight,<br/>bulk haulage and vehicle recovery.</p><div className="footer-links"><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/sectors">Industries</Link><Link to="/fleet">Fleet</Link><Link to="/careers">Join our team</Link></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Martley International.</span><span>Portlaoise, Co. Laois, Ireland</span><Link to="/contact">Contact us <A /></Link></div></footer>;
 }
 
 export function Kicker({ children, dark = false }) {
@@ -82,20 +82,20 @@ export function ButtonLink({ to, children, outline = false }) {
 }
 
 export function PageHero({ eyebrow, children, lead, image, position }) {
-  return <section className="page-hero" style={{ '--hero-position': position || 'center' }}><img className="page-hero-image" src={`/assets/${image}`} alt="" width="1200" height="800" fetchPriority="high"/><div className="page-hero-shade"/><div className="container page-hero-inner"><span className="eyebrow"><span className="eyebrow-line"/>{eyebrow}</span><h1>{children}</h1><p>{lead}</p></div><div className="container page-hero-index"><Link to="/">HOME</Link><span>/</span><span>{eyebrow}</span></div></section>;
+  return <section className="page-hero" style={{ '--hero-position': position || 'center' }}><img className="page-hero-image" src={`/assets/${image}`} alt="" width="1200" height="800" fetchPriority="high"/><div className="page-hero-shade"/><div className="container page-hero-inner"><span className="eyebrow"><span className="eyebrow-line"/>MARTLEY INTERNATIONAL</span><h1>{children}</h1><p>{lead}</p></div><div className="container page-hero-index"><Link to="/">HOME</Link><span>/</span><span>{eyebrow}</span></div></section>;
 }
 
 export function SectionTitle({ number, children, intro }) {
-  return <div className="page-heading"><Kicker>{number}</Kicker><h2>{children}</h2>{intro && <p>{intro}</p>}</div>;
+  return <div className="page-heading"><Kicker>{number.split('/')[0].trim()}</Kicker><h2>{children}</h2>{intro && <p>{intro}</p>}</div>;
 }
 
-export function ContactCta({ children, body = 'Tell us what you need to move. We will help plan the next step.' }) {
-  return <section className="page-cta"><div className="container page-cta-inner"><div><Kicker dark>LET’S TALK</Kicker><h2>{children}</h2><p>{body}</p></div><ButtonLink to="/contact">Start an enquiry</ButtonLink></div></section>;
+export function ContactCta() {
+  return <section className="page-cta"><div className="container page-cta-inner"><div><Kicker dark>CONTACT US</Kicker><h2>LET’S TALK ABOUT<br/><span>YOUR NEXT MOVE.</span></h2><p>Tell us what you need to move, where it needs to go and when. Our team will help plan the right transport solution.</p></div><ButtonLink to="/contact">Contact us</ButtonLink></div></section>;
 }
 
 export function usePage(title, description) {
   useEffect(() => {
-    document.title = `${title} | Martleys Transport`;
+    document.title = `${title} | Martley International`;
     document.querySelector('meta[name="description"]')?.setAttribute('content', description);
   }, [title, description]);
 }
