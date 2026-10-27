@@ -3,7 +3,8 @@ import { mkdir } from 'node:fs/promises';
 import { chromium } from 'playwright-core';
 
 const baseUrl = process.env.SITE_URL || 'http://127.0.0.1:4173';
-const routes = ['/', '/about', '/services', '/sectors', '/fleet', '/careers', '/contact', '/missing-page'];
+const routes = ['/', '/samples/blue', '/samples/navy', '/samples/white', '/about', '/services', '/sectors', '/fleet', '/careers', '/contact', '/missing-page'];
+const sampleColours = { '/samples/blue': 'rgb(10, 112, 159)', '/samples/navy': 'rgb(11, 49, 85)', '/samples/white': 'rgb(255, 255, 255)' };
 const widths = [320, 375, 390, 430, 768, 900, 1024, 1440];
 const browser = await chromium.launch({ channel: 'msedge', headless: true, args: ['--disable-gpu', '--disable-software-rasterizer', '--no-sandbox'] });
 const failures = [];
@@ -18,6 +19,10 @@ try {
       assert.equal(response?.status(), 200, `${route} should return HTTP 200`);
       await page.locator('h1').first().waitFor();
       await page.evaluate(() => document.fonts.ready);
+      if (width === 390 && sampleColours[route]) {
+        assert.equal(await page.locator('.site-header').evaluate(element => getComputedStyle(element).backgroundColor), sampleColours[route], `${route} has the selected header colour`);
+        assert.equal(await page.locator('.header-sample-card').count(), 4, `${route} includes links to every header sample`);
+      }
       const layout = await page.evaluate(() => {
         const root = document.documentElement;
         const width = root.clientWidth;
