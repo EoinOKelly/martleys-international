@@ -35,11 +35,38 @@ function RouteEffects() {
         if (attempts++ < 120) frame = requestAnimationFrame(attach);
         return;
       }
-      const targets = main.querySelectorAll('.page-heading, .section-heading, .service-card, .value-grid article, .standard-grid article, .sector-grid article, .fleet-catalog article, .feature-photo, .intro-grid, .capability-list article, .why-points>div');
+      const targets = main.querySelectorAll([
+        '.home-welcome .container > *',
+        '.home-offer-heading',
+        '.home-offer-grid > a',
+        '.home-tile-grid > a',
+        '.home-blue-inner > *',
+        '.page-heading',
+        '.prose > *',
+        '.feature-photo',
+        '.feature-copy > p',
+        '.feature-copy > .text-link',
+        '.feature-copy > .tick-list',
+        '.value-grid article',
+        '.standard-grid article',
+        '.sector-grid article',
+        '.fleet-catalog article',
+        '.service-graphic',
+        '.page-cta-inner > *',
+        '.statement-inner > *',
+        '.contact-page-grid > div'
+      ].join(', '));
       observer = new IntersectionObserver(entries => entries.forEach(entry => {
         if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
-      }), { rootMargin: '0px 0px -35px 0px', threshold: 0.08 });
-      targets.forEach(target => { target.classList.add('reveal'); observer.observe(target); });
+      }), { rootMargin: '0px 0px -24px 0px', threshold: 0.08 });
+      const groups = new Map();
+      targets.forEach(target => {
+        const position = groups.get(target.parentElement) || 0;
+        groups.set(target.parentElement, position + 1);
+        target.style.setProperty('--reveal-delay', `${Math.min(position, 3) * 65}ms`);
+        target.classList.add('reveal');
+        observer.observe(target);
+      });
     };
     frame = requestAnimationFrame(attach);
     return () => { cancelAnimationFrame(frame); observer?.disconnect(); };

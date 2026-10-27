@@ -9,6 +9,7 @@ import '@fontsource-variable/dm-sans/wght.css';
 import './styles.css';
 import './pages.css';
 import './refresh.css';
+import './motion.css';
 
 document.documentElement.classList.add('js');
 

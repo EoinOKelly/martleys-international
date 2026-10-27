@@ -32,6 +32,10 @@ try {
       if ([390, 1440].includes(width) && ['/', '/services', '/contact'].includes(route)) await page.screenshot({ path: `qa-artifacts/${route === '/' ? 'home' : route.slice(1)}-${width}.png`, fullPage: false });
     }
     await page.goto(baseUrl, { waitUntil: 'domcontentloaded' });
+    if (width === 390) {
+      await page.locator('.home-offer-grid > a').first().scrollIntoViewIfNeeded();
+      await page.waitForFunction(() => getComputedStyle(document.querySelector('.home-offer-grid > a')).opacity === '1');
+    }
     if (width <= 900) {
       const menu = page.locator('.menu-button');
       await menu.click();
@@ -41,6 +45,7 @@ try {
       await page.locator('h1').first().waitFor();
       assert.equal(await page.locator('h1').count(), 1, `${width}px contact route renders`);
       assert.equal(await page.getByRole('button', { name: 'Open menu' }).getAttribute('aria-expanded'), 'false', `${width}px menu closes after navigation`);
+      assert.equal(await page.locator('#main-nav').evaluate(element => getComputedStyle(element).visibility), 'hidden', `${width}px closed menu is hidden`);
     } else {
       await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: /Get a quote/i }).click();
       await page.waitForURL('**/contact');
@@ -55,6 +60,13 @@ try {
     }
     await context.close();
   }
+  const reduced = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
+  const reducedPage = await reduced.newPage();
+  await reducedPage.goto(baseUrl, { waitUntil: 'domcontentloaded' });
+  await reducedPage.locator('.home-offer-grid > a').first().waitFor();
+  assert.equal(await reducedPage.locator('.home-offer-grid > a').first().evaluate(element => getComputedStyle(element).opacity), '1', 'Reduced motion keeps content visible');
+  assert.equal(await reducedPage.locator('video').evaluate(element => element.paused), true, 'Reduced motion keeps the hero video paused');
+  await reduced.close();
   if (failures.length) throw new Error(`Horizontal overflow:\n${failures.join('\n')}`);
   console.log(`Checked ${routes.length} routes at ${widths.join(', ')}px in Edge Chromium; navigation and enquiry form passed.`);
 } finally {
