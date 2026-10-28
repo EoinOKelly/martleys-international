@@ -19,7 +19,6 @@ export default function Home() {
     </section>
 
     <section className="home-welcome" id="welcome"><div className="container">
-      <span className="home-label">MARTLEY INTERNATIONAL</span>
       <h1>Transport &amp; Logistics across Ireland, the UK &amp; Europe.</h1>
       <p>Martley International is an Irish-owned transport and logistics company with over 40 years of experience serving Ireland, the UK, and Europe. We specialise in temperature-controlled freight, ambient goods, bulk haulage, and vehicle recovery. Based in Portlaoise with direct M7 access, we are ideally located for rapid nationwide and international transport.</p>
       <Link className="welcome-link" to="/about">About the company <span aria-hidden="true">↗</span></Link>

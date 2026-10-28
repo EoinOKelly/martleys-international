@@ -82,7 +82,7 @@ export function ButtonLink({ to, children, outline = false }) {
 }
 
 export function PageHero({ eyebrow, children, lead, image, position }) {
-  return <section className="page-hero" style={{ '--hero-position': position || 'center' }}><img className="page-hero-image" src={`/assets/${image}`} alt="" width="1200" height="800" fetchPriority="high"/><div className="page-hero-shade"/><div className="container page-hero-inner"><span className="eyebrow"><span className="eyebrow-line"/>MARTLEY INTERNATIONAL</span><h1>{children}</h1><p>{lead}</p></div><div className="container page-hero-index"><Link to="/">HOME</Link><span>/</span><span>{eyebrow}</span></div></section>;
+  return <section className="page-hero" style={{ '--hero-position': position || 'center' }}><img className="page-hero-image" src={`/assets/${image}`} alt="" width="1200" height="800" fetchPriority="high"/><div className="page-hero-shade"/><div className="container page-hero-inner"><h1>{children}</h1><p>{lead}</p></div><div className="container page-hero-index"><Link to="/">HOME</Link><span>/</span><span>{eyebrow}</span></div></section>;
 }
 
 export function SectionTitle({ number, children, intro }) {
@@ -90,7 +90,7 @@ export function SectionTitle({ number, children, intro }) {
 }
 
 export function ContactCta() {
-  return <section className="page-cta"><div className="container page-cta-inner"><div><Kicker dark>CONTACT US</Kicker><h2>LET’S TALK ABOUT<br/><span>YOUR NEXT MOVE.</span></h2><p>Tell us what you need to move, where it needs to go and when. Our team will help plan the right transport solution.</p></div><ButtonLink to="/contact">Contact us</ButtonLink></div></section>;
+  return <section className="page-cta"><div className="container page-cta-inner"><div><h2>LET’S TALK ABOUT<br/><span>YOUR NEXT MOVE.</span></h2><p>Tell us what you need to move, where it needs to go and when. Our team will help plan the right transport solution.</p></div><ButtonLink to="/contact">Contact us</ButtonLink></div></section>;
 }
 
 export function usePage(title, description) {
