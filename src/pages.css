@@ -64,4 +64,4 @@ h1,h2,h3,.brand-main{font-family:'Barlow Condensed','Arial Narrow',Impact,sans-s
 .page-cta h2{margin-top:0}
 .sector-grid article{border-top:3px solid #1596d2}
 .sector-grid .sector-heading{margin:0 0 18px;color:#0d6897;font-size:clamp(2rem,2.8vw,2.75rem);line-height:1.05;letter-spacing:.01em}
-.sector-heading span{display:block;margin-bottom:21px;color:#1596d2;font:700 11px 'DM Sans Variable',sans-serif;letter-spacing:.18em}
+.sector-page-heading h2{margin-top:0}
