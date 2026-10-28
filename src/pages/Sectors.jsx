@@ -11,9 +11,9 @@ const sectors = [
 ];
 
 export default function Sectors() {
-  usePage('Sectors We Serve', 'Logistics for food, pharmaceuticals, construction, quarrying, utilities, road maintenance and vehicle recovery.');
-  return <main id="main"><PageHero eyebrow="SECTORS WE SERVE" lead="Transport services for food, pharmaceuticals, construction, quarrying and vehicle operators." image="europe-freight.jpg">SECTORS<br/><em>WE SERVE.</em></PageHero>
-    <section className="page-section"><div className="container"><SectionTitle number="01 / INDUSTRIES" intro="Our services are shaped around the practical needs of the sectors we serve.">WORKING ACROSS<br/><span>YOUR WORLD.</span></SectionTitle><div className="sector-grid">{sectors.map(sector => <article key={sector.tag}><span>{sector.tag}</span><h3>{sector.title}</h3><p>{sector.body}</p><Link to={sector.to}>Explore service <A /></Link></article>)}</div></div></section>
-    <ContactCta body="Tell us about the load, the route and the timing. We will work through the details with you.">LET’S SOLVE<br/><span>YOUR NEXT MOVE.</span></ContactCta>
+  usePage('Industries', 'Logistics for food, pharmaceuticals, construction, quarrying, utilities and vehicle recovery.');
+  return <main id="main"><PageHero eyebrow="INDUSTRIES" lead="Transport services for food, pharmaceuticals, construction, quarrying and vehicle recovery." image="europe-freight.jpg">INDUSTRIES</PageHero>
+    <section className="page-section"><div className="container"><SectionTitle number="01 / INDUSTRIES" intro="Our services are shaped around the practical needs of the sectors we serve.">Industries</SectionTitle><div className="sector-grid">{sectors.map(sector => <article key={sector.tag}><span>{sector.tag}</span><h3>{sector.title}</h3><p>{sector.body}</p><Link to={sector.to}>Explore service <A /></Link></article>)}</div></div></section>
+    <ContactCta />
   </main>;
 }
