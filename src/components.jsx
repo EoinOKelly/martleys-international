@@ -8,7 +8,7 @@ export function Brand() {
 }
 
 const navItems = [
-  ['About', '/about'], ['Services', '/services'], ['Industries', '/sectors'],
+  ['About', '/about'], ['Services', '/services'], ['Sectors', '/sectors'],
   ['Fleet', '/fleet'], ['Join our team', '/careers']
 ];
 
@@ -64,7 +64,7 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer className="footer"><div className="container footer-top"><Brand /><p>Temperature-controlled freight,<br/>bulk haulage and vehicle recovery.</p><div className="footer-links"><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/sectors">Industries</Link><Link to="/fleet">Fleet</Link><Link to="/careers">Join our team</Link></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Martley International.</span><span>Portlaoise, Co. Laois, Ireland</span><Link to="/contact">Contact us <A /></Link></div></footer>;
+  return <footer className="footer"><div className="container footer-top"><Brand /><div className="footer-links"><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/sectors">Sectors</Link><Link to="/fleet">Fleet</Link><Link to="/careers">Join our team</Link></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Martley International.</span><span>Portlaoise, Co. Laois, Ireland</span><Link to="/contact">Contact us <A /></Link></div></footer>;
 }
 
 export function Kicker({ children, dark = false }) {
@@ -89,8 +89,8 @@ export function SectionTitle({ number, children, intro }) {
   return <div className="page-heading"><Kicker>{number.split('/')[0].trim()}</Kicker><h2>{children}</h2>{intro && <p>{intro}</p>}</div>;
 }
 
-export function ContactCta() {
-  return <section className="page-cta"><div className="container page-cta-inner"><div><h2>LET’S TALK ABOUT<br/><span>YOUR NEXT MOVE.</span></h2><p>Tell us what you need to move, where it needs to go and when. Our team will help plan the right transport solution.</p></div><ButtonLink to="/contact">Contact us</ButtonLink></div></section>;
+export function ContactCta({ children, body = 'Tell us what you need to move, where it needs to go and when. Our team will help plan the right transport solution.' }) {
+  return <section className="page-cta"><div className="container page-cta-inner"><div><h2>{children || <>LET’S TALK ABOUT<br/><span>YOUR NEXT MOVE.</span></>}</h2><p>{body}</p></div><ButtonLink to="/contact">Contact us</ButtonLink></div></section>;
 }
 
 export function usePage(title, description) {
