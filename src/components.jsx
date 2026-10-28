@@ -18,8 +18,6 @@ export function Header() {
   const navRef = useRef(null);
   const toggleRef = useRef(null);
   const location = useLocation();
-  const sampleTheme = location.pathname.split('/')[1] === 'samples' ? location.pathname.split('/')[2] : 'charcoal';
-  const theme = ['blue', 'navy', 'white', 'martley-blue', 'dark-petrol'].includes(sampleTheme) ? sampleTheme : 'charcoal';
 
   useEffect(() => { setOpen(false); }, [location.pathname]);
   useEffect(() => {
@@ -51,8 +49,8 @@ export function Header() {
 
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
-    <div className={`topline theme-${theme}`}><div className="container topline-inner"><span>Transport from Portlaoise across Ireland, the UK and Europe</span><div><a href="tel:+353578620888">+353 (0)57 862 0888</a><span className="topline-divider">/</span><a href="mailto:info@portlaoiselogistics.com">info@portlaoiselogistics.com</a></div></div></div>
-    <header className={`site-header theme-${theme}${scrolled ? ' is-scrolled' : ''}`}>
+    <div className="topline"><div className="container topline-inner"><span>Transport from Portlaoise across Ireland, the UK and Europe</span><div><a href="tel:+353578620888">+353 (0)57 862 0888</a><span className="topline-divider">/</span><a href="mailto:info@portlaoiselogistics.com">info@portlaoiselogistics.com</a></div></div></div>
+    <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
       <div className="container header-inner">
         <Brand />
         <nav className={`main-nav${open ? ' is-open' : ''}`} id="main-nav" ref={navRef} aria-label="Main navigation">

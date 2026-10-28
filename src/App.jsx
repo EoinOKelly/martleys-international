@@ -75,6 +75,6 @@ function RouteEffects() {
 
 export default function App() {
   return <><RouteEffects/><Header/><Suspense fallback={<main className="route-loading" id="main" aria-live="polite">Loading page…</main>}><Routes>
-    <Route path="/" element={<Home/>}/><Route path="/samples/blue" element={<Home theme="blue"/>}/><Route path="/samples/navy" element={<Home theme="navy"/>}/><Route path="/samples/white" element={<Home theme="white"/>}/><Route path="/samples/martley-blue" element={<Home theme="martley-blue"/>}/><Route path="/samples/dark-petrol" element={<Home theme="dark-petrol"/>}/><Route path="/about" element={<About/>}/><Route path="/services" element={<Services/>}/><Route path="/sectors" element={<Sectors/>}/><Route path="/fleet" element={<Fleet/>}/><Route path="/careers" element={<Careers/>}/><Route path="/contact" element={<Contact/>}/><Route path="*" element={<NotFound/>}/>
+    <Route path="/" element={<Home/>}/><Route path="/about" element={<About/>}/><Route path="/services" element={<Services/>}/><Route path="/sectors" element={<Sectors/>}/><Route path="/fleet" element={<Fleet/>}/><Route path="/careers" element={<Careers/>}/><Route path="/contact" element={<Contact/>}/><Route path="*" element={<NotFound/>}/>
   </Routes></Suspense><Footer/></>;
 }

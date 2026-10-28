@@ -8,17 +8,8 @@ const tiles = [
   { title: 'Join our team', image: 'international.jpg', alt: 'Martley truck in Europe', to: '/careers' },
 ];
 
-const headerSamples = [
-  { theme: 'charcoal', label: 'Current charcoal', to: '/' },
-  { theme: 'blue', label: 'Blue header', to: '/samples/blue' },
-  { theme: 'navy', label: 'Deep navy header', to: '/samples/navy' },
-  { theme: 'white', label: 'White header', to: '/samples/white' },
-  { theme: 'martley-blue', label: 'Martley blue · matching bars', to: '/samples/martley-blue' },
-  { theme: 'dark-petrol', label: 'Dark petrol · matching bars', to: '/samples/dark-petrol' },
-];
-
-export default function Home({ theme = 'charcoal' }) {
-  usePage(theme === 'charcoal' ? 'Martley International' : `${headerSamples.find(sample => sample.theme === theme)?.label} sample`, 'Temperature-controlled freight, bulk haulage and vehicle recovery across Ireland, the UK and Europe.');
+export default function Home() {
+  usePage('Martley International', 'Temperature-controlled freight, bulk haulage and vehicle recovery across Ireland, the UK and Europe.');
   const videoRef = useHeroVideo();
   return <main id="main" className="adare-home">
     <section className="hero" aria-label="Martley trucks on the road and at the depot">
@@ -46,8 +37,6 @@ export default function Home({ theme = 'charcoal' }) {
     <section className="home-tiles"><div className="container">
       <div className="home-tile-grid">{tiles.map(tile => <Link className="home-tile" to={tile.to} key={tile.title}><img src={`/assets/${tile.image}`} alt={tile.alt} width="1200" height="800" loading="lazy"/><span>{tile.title}<b aria-hidden="true">↗</b></span></Link>)}</div>
     </div></section>
-
-    <section className="header-samples" aria-labelledby="header-samples-title"><div className="container"><div className="header-samples-heading"><span className="home-label">TEMPORARY DESIGN PREVIEWS</span><h2 id="header-samples-title">Compare header colours</h2><p>Open a full copy of this home page in each style. You can share the links directly for feedback.</p></div><div className="header-samples-grid">{headerSamples.map(sample => <Link className={`header-sample-card${theme === sample.theme ? ' is-current' : ''}`} to={sample.to} key={sample.theme} aria-current={theme === sample.theme ? 'page' : undefined}><span className={`header-sample-swatch theme-${sample.theme}`}><strong>MARTLEY</strong><small>INTERNATIONAL TRANSPORT</small></span><span className="header-sample-label">{sample.label}<b aria-hidden="true">↗</b></span></Link>)}</div></div></section>
 
   </main>;
 }
