@@ -150,11 +150,21 @@
 .site-header.theme-white .nav-contact{background:#176d9d;color:#fff}
 .site-header.theme-white .nav-contact:hover{background:#0a608b}
 .site-header.theme-white .menu-button{color:#0b3155}
+.topline.theme-martley-blue,.site-header.theme-martley-blue,.site-header.theme-martley-blue.is-scrolled{background:#075fa8;color:#fff}
+.site-header.theme-martley-blue .brand-sub{color:#e5f5ff}
+.site-header.theme-martley-blue .nav-contact{background:#fff;color:#07518d}
+.site-header.theme-martley-blue .nav-contact:hover{background:#dceffa}
+.site-header.theme-martley-blue .main-nav>a:not(.nav-contact):after{background:#fff}
+.topline.theme-dark-petrol,.site-header.theme-dark-petrol,.site-header.theme-dark-petrol.is-scrolled{background:#123b43;color:#fff}
+.site-header.theme-dark-petrol .brand-sub{color:#afe7e4}
+.site-header.theme-dark-petrol .nav-contact{background:#bce8e4;color:#123b43}
+.site-header.theme-dark-petrol .nav-contact:hover{background:#e0f4f1}
+.site-header.theme-dark-petrol .main-nav>a:not(.nav-contact):after{background:#bce8e4}
 .header-samples{padding:75px 0 90px;background:#edf3f6;border-top:1px solid #d8e4ea}
 .header-samples-heading{max-width:700px;margin-bottom:30px}
 .header-samples-heading h2{font-size:clamp(2.4rem,4vw,3.8rem);margin:9px 0 12px;color:#18384f}
 .header-samples-heading p{color:#526575;line-height:1.7;margin:0}
-.header-samples-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.header-samples-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
 .header-sample-card{min-width:0;display:block;background:#fff;border:2px solid transparent;transition:border-color .2s,transform .2s}
 .header-sample-card:hover{transform:translateY(-3px);border-color:#176d9d}
 .header-sample-card.is-current{border-color:#176d9d}
@@ -162,6 +172,8 @@
 .header-sample-swatch.theme-blue{background:#0a709f}
 .header-sample-swatch.theme-navy{background:#0b3155}
 .header-sample-swatch.theme-white{background:#fff;color:#0b3155;border-bottom:1px solid #d8e4ea}
+.header-sample-swatch.theme-martley-blue{background:#075fa8}
+.header-sample-swatch.theme-dark-petrol{background:#123b43}
 .header-sample-swatch strong{font-family:'Barlow Condensed',sans-serif;font-size:36px;letter-spacing:.025em;line-height:1}
 .header-sample-swatch small{font-size:7px;letter-spacing:.18em;font-weight:700;margin-top:3px}
 .header-sample-label{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:15px 18px;color:#18384f;font-size:13px;font-weight:700}

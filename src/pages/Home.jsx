@@ -13,6 +13,8 @@ const headerSamples = [
   { theme: 'blue', label: 'Blue header', to: '/samples/blue' },
   { theme: 'navy', label: 'Deep navy header', to: '/samples/navy' },
   { theme: 'white', label: 'White header', to: '/samples/white' },
+  { theme: 'martley-blue', label: 'Martley blue · matching bars', to: '/samples/martley-blue' },
+  { theme: 'dark-petrol', label: 'Dark petrol · matching bars', to: '/samples/dark-petrol' },
 ];
 
 export default function Home({ theme = 'charcoal' }) {

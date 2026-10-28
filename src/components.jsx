@@ -19,7 +19,7 @@ export function Header() {
   const toggleRef = useRef(null);
   const location = useLocation();
   const sampleTheme = location.pathname.split('/')[1] === 'samples' ? location.pathname.split('/')[2] : 'charcoal';
-  const theme = ['blue', 'navy', 'white'].includes(sampleTheme) ? sampleTheme : 'charcoal';
+  const theme = ['blue', 'navy', 'white', 'martley-blue', 'dark-petrol'].includes(sampleTheme) ? sampleTheme : 'charcoal';
 
   useEffect(() => { setOpen(false); }, [location.pathname]);
   useEffect(() => {
