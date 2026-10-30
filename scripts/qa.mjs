@@ -53,7 +53,7 @@ try {
     if (width === 390) {
       await page.locator('input[name="name"]').fill('Test User');
       await page.locator('input[name="email"]').fill('test@example.com');
-      await page.locator('select[name="service"]').selectOption('Bulk Haulage');
+      assert.equal(await page.locator('select[name="service"]').evaluate(element => element.required), false, 'Service is optional');
       await page.locator('textarea[name="details"]').fill('Test load details');
       await page.getByRole('button', { name: /Create email enquiry/i }).click();
       assert.match(await page.getByRole('status').textContent(), /Opening your email application/);

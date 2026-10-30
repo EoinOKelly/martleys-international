@@ -28,7 +28,7 @@
 }
 
 @media (hover:hover) and (pointer:fine){
-  .home-offer-grid>a:focus-visible{border-color:#176d9d;transform:translateY(-3px)}
+  .home-offer-grid>a:focus-visible{border-color:#1596d2;transform:translateY(-3px)}
   .home-tile:focus-visible img{transform:scale(1.05)}
   .hero-discover span,.text-link span,.welcome-link span,.home-tile b{transition:transform .25s cubic-bezier(.22,1,.36,1)}
   .hero-discover:hover span,.hero-discover:focus-visible span{transform:translateY(3px)}
