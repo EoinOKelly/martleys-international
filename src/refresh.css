@@ -153,5 +153,7 @@
 .footer-social-icons a:hover{background:#1596d2;border-color:#1596d2;color:#fff}
 .footer-social-icons svg{width:21px;height:21px;fill:currentColor}
 .adare-home .page-cta h2{font-family:'Barlow Condensed','Arial Narrow',Impact,sans-serif;font-weight:700;letter-spacing:0}
+.adare-home .page-cta .button{background:#1596d2;color:#fff}
+.adare-home .page-cta .button:hover{background:#087fb8}
 @media(max-width:900px){.footer-top{grid-template-columns:repeat(2,minmax(0,1fr))}.home-service-card-image{height:190px}}
 @media(max-width:650px){.home-service-card-image{height:220px}.home-service-card-copy{padding:24px}.footer-top{grid-template-columns:1fr;gap:28px}.footer-links,.footer-contact,.footer-social{gap:8px}.footer-links a,.footer-contact a,.footer-social a{padding:4px 0}}
