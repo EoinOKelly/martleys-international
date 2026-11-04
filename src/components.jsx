@@ -102,7 +102,7 @@ export function SectionTitle({ number, children, intro }) {
 }
 
 export function ContactCta() {
-  return <section className="page-cta"><div className="container page-cta-inner"><div><h2>NEED RELIABLE TRANSPORT<br/><span>OR RECOVERY?</span><br/>TALK TO OUR TEAM.</h2><p>Tell us what you need to move, where it needs to go and when. Our team will help plan the right transport solution.</p></div><ButtonLink to="/contact">Contact us</ButtonLink></div></section>;
+  return <section className="page-cta"><div className="container page-cta-inner"><div><h2>NEED RELIABLE TRANSPORT?<br/><span>TALK TO OUR TEAM.</span></h2><p>Tell us what you need to move, where it needs to go and when. Our team will help plan the right transport solution.</p></div><ButtonLink to="/contact">Contact us</ButtonLink></div></section>;
 }
 
 export function usePage(title, description) {
