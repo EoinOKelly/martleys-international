@@ -66,3 +66,12 @@ h1,h2,h3,.brand-main{font-family:'Barlow Condensed','Arial Narrow',Impact,sans-s
 .sector-grid .sector-heading{margin:0 0 18px;color:#1596d2;font-size:clamp(2rem,2.8vw,2.75rem);line-height:1.05;letter-spacing:.01em}
 .sector-page-heading h2{margin-top:0}
 .enquiry-panel .field-note{font-size:12px;line-height:1.5;color:#5f7080;margin:0}
+
+/* Keep interior banner headings aligned with the shared contact CTA on desktop. */
+@media(min-width:901px){.page-hero h1{font-size:clamp(3rem,5.4vw,5.5rem);line-height:.96}}
+.fleet-catalog p+p{margin-top:12px}
+
+/* The shared contact CTA uses the same type scale as interior banner headings. */
+@media(min-width:901px){.page-cta h2{font-size:clamp(3rem,5.4vw,5.5rem);line-height:.96}}
+@media(min-width:651px) and (max-width:900px){.page-cta h2{font-size:clamp(4rem,10vw,7rem);line-height:.91}}
+@media(max-width:650px){.page-cta h2{font-size:clamp(2.8rem,13.5vw,5rem);line-height:.91}}

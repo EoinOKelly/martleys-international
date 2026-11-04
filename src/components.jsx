@@ -4,7 +4,7 @@ import { Link, NavLink, useLocation } from 'react-router';
 export const A = ({ children }) => <span aria-hidden="true">{children || '↗'}</span>;
 
 export function Brand() {
-  return <Link className="brand" to="/" aria-label="Martley International, back to home"><span className="brand-main">MARTLEY</span><span className="brand-sub">INTERNATIONAL TRANSPORT</span></Link>;
+  return <Link className="brand" to="/" aria-label="Martley International, back to home"><span className="brand-main">MARTLEY</span><span className="brand-sub">international</span></Link>;
 }
 
 const navItems = [
@@ -64,7 +64,19 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer className="footer"><div className="container footer-top"><Brand /><div className="footer-links"><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/sectors">Industries</Link><Link to="/fleet">Fleet</Link><Link to="/careers">Join our team</Link></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Martley International.</span><span>Portlaoise, Co. Laois, Ireland</span><Link to="/contact">Contact us <A /></Link></div></footer>;
+  return <footer className="footer">
+    <div className="container footer-top">
+      <div className="footer-brand"><Brand /><address>Dublin Road, Kilminchy<br/>Portlaoise, Co. Laois<br/>R32 CPA4, Ireland</address></div>
+      <nav className="footer-links" aria-label="Footer navigation"><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/sectors">Industries</Link><Link to="/fleet">Fleet</Link><Link to="/careers">Join our team</Link></nav>
+      <div className="footer-contact"><span className="footer-label">CONTACT</span><a href="tel:+353578620888">+353 (0)57 862 0888</a><a href="mailto:info@portlaoiselogistics.com">info@portlaoiselogistics.com</a></div>
+      <div className="footer-social"><span className="footer-label">FOLLOW</span><div className="footer-social-icons">
+        <a href="https://www.facebook.com/Martleys" target="_blank" rel="noreferrer" aria-label="Martleys on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-9h3l.5-3.5h-3.5V7.3c0-1 .3-1.8 1.8-1.8H17V2.4c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.6v2.6H7V13h3v9h3.5Z"/></svg></a>
+        <a href="https://www.instagram.com/martleys_portlaoise" target="_blank" rel="noreferrer" aria-label="Martleys on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm-.2 2A3 3 0 0 0 4 7v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm10.8 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" clipRule="evenodd"/></svg></a>
+        <a href="https://www.linkedin.com/company/portlaoiselogisticsltd" target="_blank" rel="noreferrer" aria-label="Portlaoise Logistics on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.3 7.7A2.3 2.3 0 1 0 5.3 3a2.3 2.3 0 0 0 0 4.7ZM3.4 21h3.8V9H3.4v12Zm6 0h3.8v-6.7c0-1.8.3-3.5 2.5-3.5 2.1 0 2.1 2 2.1 3.6V21h3.8v-7.4c0-3.6-.8-6.4-5-6.4-2 0-3.4 1.1-4 2.1h-.1V7.7H9V21Z"/></svg></a>
+      </div></div>
+    </div>
+    <div className="container footer-bottom"><span>© {new Date().getFullYear()} Martley International.</span><span>Transport across Ireland, the UK and Europe</span><Link to="/contact">Contact us <A /></Link></div>
+  </footer>;
 }
 
 export function Kicker({ children, dark = false }) {
@@ -90,7 +102,7 @@ export function SectionTitle({ number, children, intro }) {
 }
 
 export function ContactCta() {
-  return <section className="page-cta"><div className="container page-cta-inner"><div><h2>LET’S TALK ABOUT<br/><span>YOUR NEXT MOVE.</span></h2><p>Tell us what you need to move, where it needs to go and when. Our team will help plan the right transport solution.</p></div><ButtonLink to="/contact">Contact us</ButtonLink></div></section>;
+  return <section className="page-cta"><div className="container page-cta-inner"><div><h2>NEED RELIABLE TRANSPORT<br/><span>OR RECOVERY?</span><br/>TALK TO OUR TEAM.</h2><p>Tell us what you need to move, where it needs to go and when. Our team will help plan the right transport solution.</p></div><ButtonLink to="/contact">Contact us</ButtonLink></div></section>;
 }
 
 export function usePage(title, description) {

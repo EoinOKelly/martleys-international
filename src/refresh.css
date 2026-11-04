@@ -3,7 +3,7 @@
 .topline-inner>span{font-size:11px;letter-spacing:.04em}
 .site-header,.site-header.is-scrolled{position:relative;top:auto;height:86px;background:#fff;color:#173b56;border-bottom:1px solid #e3e9eb;box-shadow:none}
 .site-header.is-scrolled{position:sticky;top:0}
-.brand-main{font-size:35px;letter-spacing:.018em;color:#173b56}
+.brand-main{font-family:'Archivo Black',Arial Black,sans-serif;font-size:31px;font-weight:400;letter-spacing:-.045em;line-height:.9;color:#173b56;text-shadow:2px 2px 0 rgba(5,30,50,.38)}
 .brand-slash{display:none}
 .brand-sub{color:#1596d2;letter-spacing:.17em}
 .main-nav>a:not(.nav-contact):after{bottom:19px;background:#1596d2}
@@ -86,7 +86,8 @@
 .topline-inner{justify-content:flex-end}
 .site-header,.site-header.is-scrolled{height:80px;background:#1596d2;color:#fff;border-bottom:0}
 .brand-main,.footer .brand-main{color:#fff}
-.brand-sub{color:#fff}
+.brand{align-items:center}
+.brand-sub{color:#fff;font-family:'Almendra','Baskerville Old Face',Garamond,serif;font-size:18px;font-weight:400;letter-spacing:.005em;line-height:.72;text-align:center;text-transform:lowercase;white-space:nowrap;text-shadow:1px 1px 0 rgba(5,30,50,.3)}
 .main-nav>a:not(.nav-contact):after{background:#fff}
 .main-nav a[aria-current=page]:not(.nav-contact){color:#fff}
 .site-header .nav-contact{color:#1596d2;background:#fff}
@@ -133,3 +134,23 @@
 .footer-links{max-width:650px;flex-wrap:wrap}
 .footer-links a{white-space:nowrap}
 @media(max-width:650px){.footer-top{flex-direction:column;gap:27px;padding-bottom:38px}.footer-links{justify-content:flex-start}}
+
+/* Content update: image-led service cards and expanded company footer. */
+.home-offer-grid>a.home-service-card{padding:0;overflow:hidden;min-height:0}
+.home-service-card-image{height:210px;object-fit:cover}
+.home-service-card-copy{display:flex;flex:1;flex-direction:column;padding:25px 28px 22px}
+.home-service-card-copy>span{font-size:11px;letter-spacing:.13em;color:#1596d2;font-weight:700}
+.home-service-card-copy h3{margin-top:16px}
+.footer-top{display:grid;grid-template-columns:1.15fr .8fr 1.15fr .7fr;gap:42px}
+.footer-brand address{font-style:normal;color:#9aafc0;font-size:12px;line-height:1.7;margin-top:22px}
+.footer-links,.footer-contact,.footer-social{display:flex;flex-direction:column;align-items:flex-start;gap:11px;font-size:12px}
+.footer-links{justify-content:flex-start;text-transform:uppercase;letter-spacing:.1em}
+.footer-contact a,.footer-social a{color:#dbe7ee;line-height:1.45;overflow-wrap:anywhere}
+.footer-contact a:hover,.footer-social a:hover{color:#1596d2}
+.footer-label{color:#1596d2;font-size:10px;font-weight:700;letter-spacing:.18em;margin-bottom:5px}
+.footer-social-icons{display:flex;gap:10px}
+.footer-social-icons a{width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.25);transition:background .2s,border-color .2s,color .2s}
+.footer-social-icons a:hover{background:#1596d2;border-color:#1596d2;color:#fff}
+.footer-social-icons svg{width:21px;height:21px;fill:currentColor}
+@media(max-width:900px){.footer-top{grid-template-columns:repeat(2,minmax(0,1fr))}.home-service-card-image{height:190px}}
+@media(max-width:650px){.home-service-card-image{height:220px}.home-service-card-copy{padding:24px}.footer-top{grid-template-columns:1fr;gap:28px}.footer-links,.footer-contact,.footer-social{gap:8px}.footer-links a,.footer-contact a,.footer-social a{padding:4px 0}}

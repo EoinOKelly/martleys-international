@@ -1,12 +1,5 @@
 import { Link } from 'react-router';
-import { useHeroVideo, usePage } from '../components.jsx';
-
-const tiles = [
-  { title: 'Our team', image: 'team.jpg', alt: 'Members of the Martley team', to: '/about' },
-  { title: 'Our fleet', image: 'refrigerated.jpg', alt: 'Martley refrigerated trucks', to: '/fleet' },
-  { title: 'Transport services', image: 'tipper.jpg', alt: 'Martley tipper truck', to: '/services' },
-  { title: 'Join our team', image: 'international.jpg', alt: 'Martley truck in Europe', to: '/careers' },
-];
+import { ContactCta, useHeroVideo, usePage } from '../components.jsx';
 
 export default function Home() {
   usePage('Martley International', 'Temperature-controlled freight, bulk haulage and vehicle recovery across Ireland, the UK and Europe.');
@@ -27,15 +20,11 @@ export default function Home() {
     <section className="home-offer"><div className="container">
       <div className="home-offer-heading"><h2>Our services</h2></div>
       <div className="home-offer-grid">
-        <Link to="/services#temperature-controlled"><span>01</span><h3>Temperature-controlled freight</h3><p>Fresh, frozen, pharmaceutical and ambient loads in monitored Chereau trailers.</p><b aria-hidden="true">↗</b></Link>
-        <Link to="/services#bulk-haulage"><span>02</span><h3>Bulk Haulage</h3><p>Aggregates, excavated material and blacktop for construction and infrastructure projects.</p><b aria-hidden="true">↗</b></Link>
-        <Link to="/services#vehicle-recovery"><span>03</span><h3>Vehicle recovery</h3><p>Recovery and transport for cars, vans, trucks, buses and heavy equipment.</p><b aria-hidden="true">↗</b></Link>
+        <Link className="home-service-card" to="/services#temperature-controlled"><img className="home-service-card-image" src="/assets/refrigerated.jpg" alt="Martley refrigerated trucks" width="1200" height="800" loading="lazy"/><div className="home-service-card-copy"><span>01</span><h3>Temperature-Controlled &amp; Dry Freight</h3><p>Secure transport for fresh, frozen, pharmaceutical and dry freight, fully tracked with live GPS and real-time temperature monitoring.</p><b aria-hidden="true">↗</b></div></Link>
+        <Link className="home-service-card" to="/services#bulk-haulage"><img className="home-service-card-image" src="/assets/tipper.jpg" alt="Martley tipper truck and trailer" width="1200" height="800" loading="lazy"/><div className="home-service-card-copy"><span>02</span><h3>Bulk Haulage</h3><p>Flexible tipper transport for aggregates, site clearance, muck shifting, and insulated blacktop across construction, quarrying, and infrastructure projects.</p><b aria-hidden="true">↗</b></div></Link>
+        <Link className="home-service-card" to="/services#vehicle-recovery"><img className="home-service-card-image" src="/assets/scania-close.jpg" alt="Martley Scania truck" width="1200" height="800" loading="lazy"/><div className="home-service-card-copy"><span>03</span><h3>Vehicle Recovery</h3><p>Dependable vehicle recovery across Ireland for light commercials, trucks, buses, agricultural and heavy machinery, using specialised low-loaders and tilt-and-slide transport to minimise downtime.</p><b aria-hidden="true">↗</b></div></Link>
       </div>
     </div></section>
-
-    <section className="home-tiles"><div className="container">
-      <div className="home-tile-grid">{tiles.map(tile => <Link className="home-tile" to={tile.to} key={tile.title}><img src={`/assets/${tile.image}`} alt={tile.alt} width="1200" height="800" loading="lazy"/><span>{tile.title}<b aria-hidden="true">↗</b></span></Link>)}</div>
-    </div></section>
-
+    <ContactCta />
   </main>;
 }

@@ -6,6 +6,8 @@ import '@fontsource/barlow-condensed/latin-600.css';
 import '@fontsource/barlow-condensed/latin-700.css';
 import '@fontsource/barlow-condensed/latin-800.css';
 import '@fontsource-variable/dm-sans/wght.css';
+import '@fontsource/archivo-black/latin-400.css';
+import '@fontsource/almendra/latin-400.css';
 import './styles.css';
 import './pages.css';
 import './refresh.css';
