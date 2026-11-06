@@ -105,7 +105,7 @@
 .home-offer{padding:75px 0 90px;background:#f5f7f8}
 .home-offer-heading{text-align:center;margin-bottom:35px}
 .home-offer-heading h2{font-size:clamp(2.3rem,3.5vw,3.5rem);margin:13px 0 0}
-.home-offer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.home-offer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .home-offer-grid>a{background:#fff;padding:31px 28px 22px;display:flex;flex-direction:column;min-height:280px;border:1px solid #dce5e9;transition:border-color .2s,transform .2s}
 .home-offer-grid>a:hover{border-color:#1596d2;transform:translateY(-3px)}
 .home-offer-grid>a>span{font-size:11px;letter-spacing:.13em;color:#1596d2;font-weight:700}
@@ -127,6 +127,7 @@
 .home-blue p{font-size:17px;max-width:650px;margin:0 auto 29px;color:#e7f5f9}
 .home-blue .button{background:#fff;color:#1596d2;min-width:205px;justify-content:center}
 .home-blue .button:hover{background:#e5f5fa}
+@media(max-width:1100px){.home-offer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:900px){.site-header,.site-header.is-scrolled{height:76px}.menu-button{color:#fff}.main-nav{background:#1596d2}.adare-home .hero{height:calc(100svh - 76px)}.home-tile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-offer-grid>a{padding:25px 20px}}
 @media(max-width:650px){.adare-home .hero{height:68svh;min-height:430px;max-height:660px}.hero-discover{bottom:18px}.home-welcome{padding:48px 0 65px}.home-welcome h1{font-size:clamp(2.25rem,9vw,3.2rem)}.home-welcome p{font-size:15px}.home-offer{padding:60px 0}.home-offer-grid{grid-template-columns:1fr;gap:12px}.home-offer-grid>a{min-height:0;padding:25px}.home-offer-grid h3{margin:16px 0 9px}.home-tiles{padding:65px 0}.home-tile-grid{gap:12px}.home-tile{height:210px}.home-tile>span{font-size:16px;left:14px;right:14px;bottom:15px}.home-blue{padding:75px 0}.home-blue p{font-size:15px}}
 @media(max-width:360px){.home-tile-grid{grid-template-columns:1fr}.home-tile{height:240px}}
@@ -138,6 +139,7 @@
 /* Content update: image-led service cards and expanded company footer. */
 .home-offer-grid>a.home-service-card{padding:0;overflow:hidden;min-height:0}
 .home-service-card-image{height:210px;object-fit:cover}
+.home-service-card-image.crop-left{object-position:left center}
 .home-service-card-copy{display:flex;flex:1;flex-direction:column;padding:25px 28px 22px}
 .home-service-card-copy>span{font-size:11px;letter-spacing:.13em;color:#1596d2;font-weight:700}
 .home-service-card-copy h3{margin-top:16px}
