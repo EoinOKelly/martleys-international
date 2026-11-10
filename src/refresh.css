@@ -87,6 +87,8 @@
 .site-header,.site-header.is-scrolled{height:80px;background:#1596d2;color:#fff;border-bottom:0}
 .brand-main,.footer .brand-main{color:#fff}
 .brand{align-items:center}
+.brand-logo{width:170px;height:auto}
+.footer .brand-logo{width:150px}
 .brand-sub{color:#fff;font-family:'Almendra','Baskerville Old Face',Garamond,serif;font-size:18px;font-weight:400;letter-spacing:.005em;line-height:.72;text-align:center;text-transform:lowercase;white-space:nowrap;text-shadow:1px 1px 0 rgba(5,30,50,.3)}
 .main-nav>a:not(.nav-contact):after{background:#fff}
 .main-nav a[aria-current=page]:not(.nav-contact){color:#fff}
