@@ -4,7 +4,7 @@ import { Link, NavLink, useLocation } from 'react-router';
 export const A = ({ children }) => <span aria-hidden="true">{children || '↗'}</span>;
 
 export function Brand() {
-  return <Link className="brand" to="/" aria-label="Martley International, back to home"><img className="brand-logo" src="/assets/martley-logo.png" alt="Martley International" width="2168" height="725"/></Link>;
+  return <Link className="brand" to="/" aria-label="Martley International, back to home"><img className="brand-logo" src="/assets/martley-logo.png" alt="Martley International" width="4907" height="964"/></Link>;
 }
 
 const navItems = [
