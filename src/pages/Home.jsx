@@ -26,6 +26,13 @@ export default function Home() {
         <Link className="home-service-card" to="/services#secure-warehousing"><img className="home-service-card-image" src="/assets/warehouse-storage.jpg" alt="Secure warehouse with pallet racking" width="1200" height="800" loading="lazy"/><div className="home-service-card-copy"><span>04</span><h3>Secure Warehousing &amp; Storage</h3><p>Secure storage and warehouse facilities for standard palletised freight, temperature-controlled goods, bulk cargo, vehicles, and plant machinery.</p><b aria-hidden="true">↗</b></div></Link>
       </div>
     </div></section>
+    <section className="home-testimonials" aria-labelledby="testimonials-heading"><div className="container">
+      <div className="home-testimonials-heading"><h2 id="testimonials-heading">What our customers say</h2><span className="testimonial-count">01 / 03</span></div>
+      <article className="testimonial-card" aria-label="Customer testimonial 1 of 3">
+        <div className="testimonial-logo"><img src="/assets/brophy-produce-logo.png" alt="Paul Brophy Produce" width="2170" height="725" loading="lazy"/></div>
+        <div className="testimonial-content"><blockquote>Having Partnered with Martley International Transport over the last few years, the volume of business has grown year on year based on The Service / Punctuality / Ease of tracking load locations / Modern fleet / driver professionalism and competitive rates. We would have no hesitation in recommending Martley International Transport as a transport provider.</blockquote><div className="testimonial-author"><strong>Barry Brophy</strong><span>Packhouse Operations Manager</span><span>Brophy Produce Ltd, Naas, Co. Kildare</span><small>( Irelands Largest Broccoli Producer )</small></div></div>
+      </article>
+    </div></section>
     <ContactCta />
   </main>;
 }
